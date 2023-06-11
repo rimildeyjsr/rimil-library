@@ -1,4 +1,6 @@
 import styled, { createGlobalStyle } from "styled-components";
+import { Header } from "./Header";
+import { Footer } from "./Footer";
 
 const GlobalStyles = createGlobalStyle`
   html {
@@ -45,7 +47,9 @@ export default function PageSkeleton({ children }) {
   return (
     <>
       <GlobalStyles />
+      <Header />
       <InnerStyles>{children}</InnerStyles>
+      <Footer />
     </>
   );
 }
