@@ -1,10 +1,6 @@
-import styled from "styled-components";
+import styled, { createGlobalStyle } from "styled-components";
 
 const GlobalStyles = createGlobalStyle`
-  @font-face {
-    
-  }
-
   html {
     --black: #000000;
     --maxWidth: 1000px;
@@ -18,7 +14,7 @@ const GlobalStyles = createGlobalStyle`
   }
 
   body {
-    font-family: 'Open sans', sans-serif;
+    font-family: 'Source Code Pro', 'Open sans', sans-serif;
     padding: 0;
     margin: 0;
     font-size: 1.5rem;
@@ -38,3 +34,18 @@ const GlobalStyles = createGlobalStyle`
     font-family: 'Open sans', sans-serif;;
   }
 `;
+
+const InnerStyles = styled.div`
+  max-width: var(--maxWidth);
+  margin: 0 auto;
+  padding: 2rem;
+`;
+
+export default function PageSkeleton({ children }) {
+  return (
+    <>
+      <GlobalStyles />
+      <InnerStyles>{children}</InnerStyles>
+    </>
+  );
+}
